@@ -1,0 +1,30 @@
+{
+    "name": "marcguyer/assembly-callback",
+    "description": "Library for interacting with callbacks as sent by Assembly Payments",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "Assembly\\Callback\\": "src/"
+        }
+    },
+    "require": {
+        "php": "^5.3 || ^7.0",
+        "zendframework/zend-json": "^2.2"
+    },
+    "suggest": {
+        "promisepay/promisepay-php": "Used for roundtrip API call to validate callback payloads"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^4.0"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Marc Guyer",
+            "email": "marcguyer@gmail.com"
+        }
+    ],
+    "scripts": {
+        "test": "phpunit"
+    }
+}
