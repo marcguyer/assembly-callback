@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/marcguyer/assembly-callback.svg?branch=master)](https://travis-ci.org/marcguyer/assembly-callback)
+
 # Assembly Payments Callback Objects
 
 A structured set of objects designed to enable some abstraction handling of [Assembly Payments Callback](https://docs.assemblypayments.com/feature-guides/guides/callbacks/) payloads.
