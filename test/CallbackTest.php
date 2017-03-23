@@ -25,6 +25,18 @@ class CallbackTest extends TestCase
     }
 
     /**
+     * Test that parsing and composing an invalid value throws exception
+     *
+     * @param $invalidArg
+     * @dataProvider invalidConstructorArgumentProvider
+     */
+    public function testParseInvalidArgument($invalidArg)
+    {
+        $this->setExpectedException('\InvalidArgumentException');
+        $callback = new Callback($invalidArg);
+    }
+
+    /**
      * Accessor Tests
      */
 
@@ -108,6 +120,24 @@ class CallbackTest extends TestCase
                     __DIR__ . '/_files/batch_transactions.json'
                 ));
             }),
+        );
+    }
+
+    /**
+     * Data provider for invalid constructor args
+     *
+     * @return array
+     */
+    public function invalidConstructorArgumentProvider()
+    {
+        return array(
+            array(new \stdClass),
+            array(new \ArrayObject),
+            array(new \Exception),
+            array(12345),
+            array(1.2e3),
+            array(function($a) { return $a * 2; }),
+            array(false),
         );
     }
 

@@ -2,6 +2,8 @@
 
 namespace Assembly\Callback;
 
+use PromisePay\PromisePay;
+
 /**
  * User callback type
  */
@@ -16,7 +18,7 @@ class User extends Callback
      */
     protected function getRemoteObject()
     {
-        if (!class_exists('PromisePay')) {
+        if (!class_exists('\PromisePay\PromisePay')) {
             throw new \RuntimeException(
                 'The PromisePay SDK is required for this method'
             );

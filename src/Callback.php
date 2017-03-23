@@ -2,7 +2,7 @@
 
 namespace Assembly\Callback;
 
-use \Zend\Json\Json;
+use Zend\Json\Json;
 
 /**
  * Generic Callback handler
@@ -30,13 +30,6 @@ class Callback implements CallbackInterface
      * @var bool
      */
     protected $validated = false;
-
-    /**
-     * HTTP Client used for hook validation/normalization
-     *
-     * @var string
-     */
-    protected static $httpClientClass = 'Zend\Http\Client';
 
     /**
      * Create a new Callback object
@@ -88,7 +81,7 @@ class Callback implements CallbackInterface
      * Parse a Callback string
      *
      * @param  string $callbackString
-     * @throws Exception\InvalidArgumentException
+     * @throws \InvalidArgumentException
      * @return Callback
      */
     public function parse($callbackString)
@@ -96,7 +89,7 @@ class Callback implements CallbackInterface
         $this->reset();
 
         if (null === $obj = Json::decode($callbackString)) {
-            throw new Exception\InvalidArgumentException(
+            throw new \InvalidArgumentException(
                 'String is expected to be json but decode failed'
             );
         }
@@ -105,7 +98,7 @@ class Callback implements CallbackInterface
         $properties = get_object_vars($obj);
 
         if (1 != $count = count($properties)) {
-            throw new Exception\InvalidArgumentException(
+            throw new \InvalidArgumentException(
                 sprintf(
                     'Expected 1 object property but found %s',
                     $count
