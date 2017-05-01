@@ -11,7 +11,12 @@ class Account extends Callback
 {
 
     public static $accountTypeIdMap = array(
-        '9200' => 'CardAccount'
+        '1100' => 'BankAccount', // - Bank Deposits
+        '2000' => 'WalletAccounts', //  - Digital Wallet
+        '9100' => 'BankAccount', // - Bank Account
+        '9110' => 'BankAccount', // - Bank Account (international)
+        '9200' => 'CardAccount', // - Credit Card Account
+        '9300' => 'PayPalAccount', // - Paypal Disbursement
     );
 
     /**
